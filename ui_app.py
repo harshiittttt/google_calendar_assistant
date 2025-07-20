@@ -17,46 +17,106 @@ st.set_page_config(
 # Custom CSS
 st.markdown("""
 <style>
-.main-header {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #1f77b4;
-    text-align: center;
-    margin-bottom: 2rem;
+/* General body padding */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
 }
 
+/* Header */
+.main-header {
+    font-size: 2.7rem;
+    font-weight: 700;
+    color: #007acc;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+/* Event Cards */
+.event-card, .conflict-card, .success-card {
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Individual Card Types */
 .event-card {
-    background-color: #f0f2f6;
-    padding: 1rem;
-    border-radius: 10px;
-    margin: 0.5rem 0;
-    border-left: 4px solid #1f77b4;
+    background-color: #f8f9fc;
+    border-left: 5px solid #1f77b4;
 }
 
 .conflict-card {
-    background-color: #ffe6e6;
-    padding: 1rem;
-    border-radius: 10px;
-    margin: 0.5rem 0;
-    border-left: 4px solid #ff4444;
+    background-color: #ffecec;
+    border-left: 5px solid #ff4d4d;
 }
 
 .success-card {
-    background-color: #e6ffe6;
-    padding: 1rem;
-    border-radius: 10px;
-    margin: 0.5rem 0;
-    border-left: 4px solid #44ff44;
+    background-color: #e7fbe7;
+    border-left: 5px solid #28a745;
 }
 
+/* Sidebar styling */
 .sidebar-section {
-    background-color: #f8f9fa;
-    padding: 1rem;
+    background-color: #ffffff;
+    padding: 1.2rem;
     border-radius: 10px;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Buttons */
+button[kind="primary"] {
+    background-color: #007acc !important;
+    border-color: #007acc !important;
+    color: white !important;
+    border-radius: 8px !important;
+}
+
+button[kind="secondary"] {
+    background-color: #f0f0f0 !important;
+    border-radius: 8px !important;
+}
+
+button {
+    padding: 0.5rem 1rem !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Form Inputs */
+textarea, input, select {
+    padding: 0.6rem !important;
+    border-radius: 8px !important;
+    font-size: 0.95rem !important;
+}
+
+/* Columns spacing */
+[data-testid="column"] {
+    padding: 0.5rem 1rem;
+}
+
+/* Wider container for the page */
+.block-container {
+    padding: 2rem 3rem;
+}
+
+/* Text area height consistent */
+textarea {
+    height: 120px !important;
+}
+
+/* Header spacing */
+h2, h3 {
+    margin-top: 1.8rem;
+    margin-bottom: 1rem;
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 # Initialize session state
 if 'calendar_api' not in st.session_state:
